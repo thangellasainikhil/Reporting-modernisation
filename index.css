@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/assets/fonts/PlusJakartaSans-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/assets/fonts/GeistMono-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Government palette */
+    --background: 0.97 0.005 240;
+    --foreground: 0.18 0.025 254;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.025 254;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.025 254;
+
+    --primary: 0.28 0.09 254;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.94 0.008 240;
+    --secondary-foreground: 0.28 0.09 254;
+
+    --muted: 0.94 0.008 240;
+    --muted-foreground: 0.52 0.02 240;
+
+    --accent: 0.88 0.08 85;
+    --accent-foreground: 0.20 0.05 50;
+
+    --destructive: 0.52 0.20 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.012 240;
+    --input: 0.88 0.012 240;
+    --ring: 0.28 0.09 254;
+
+    /* Government semantic colors */
+    --gov-navy: 0.28 0.09 254;
+    --gov-navy-dark: 0.15 0.07 254;
+    --gov-navy-deeper: 0.10 0.06 254;
+    --gov-navy-light: 0.40 0.09 254;
+    --gov-gold: 0.72 0.12 85;
+    --gov-gold-dark: 0.62 0.15 80;
+    --gov-green: 0.52 0.15 145;
+    --gov-green-bg: 0.95 0.04 145;
+    --gov-amber: 0.65 0.15 60;
+    --gov-amber-bg: 0.96 0.04 80;
+    --gov-red: 0.52 0.20 25;
+    --gov-red-bg: 0.96 0.04 25;
+    --gov-blue: 0.52 0.14 230;
+    --gov-blue-bg: 0.94 0.04 250;
+
+    /* Charts */
+    --chart-1: 0.28 0.09 254;
+    --chart-2: 0.52 0.15 145;
+    --chart-3: 0.65 0.15 60;
+    --chart-4: 0.52 0.20 25;
+    --chart-5: 0.52 0.14 230;
+
+    /* Sidebar — deep navy */
+    --sidebar: 0.13 0.065 254;
+    --sidebar-foreground: 0.91 0.01 240;
+    --sidebar-primary: 0.72 0.12 85;
+    --sidebar-primary-foreground: 0.18 0.04 50;
+    --sidebar-accent: 0.20 0.08 254;
+    --sidebar-accent-foreground: 0.95 0.01 240;
+    --sidebar-border: 0.22 0.06 254;
+    --sidebar-ring: 0.72 0.12 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 3px solid oklch(var(--gov-gold));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Dense table styling */
+  .gov-table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .gov-table thead tr {
+    background: oklch(0.95 0.008 240);
+  }
+
+  .gov-table th {
+    padding: 0.55rem 0.75rem;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: oklch(0.42 0.04 254);
+    background: oklch(0.95 0.008 240);
+    border-bottom: 1px solid oklch(0.88 0.012 240);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .gov-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid oklch(0.93 0.008 240);
+    font-size: 12px;
+    color: oklch(0.30 0.02 240);
+    vertical-align: middle;
+  }
+
+  .gov-table tbody tr:hover td {
+    background: oklch(0.97 0.005 240);
+  }
+
+  .gov-table tr.row-overdue td {
+    background: oklch(0.98 0.01 25);
+  }
+
+  /* Status badges */
+  .badge-green {
+    background: oklch(0.92 0.06 145);
+    color: oklch(0.30 0.12 145);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .badge-amber {
+    background: oklch(0.94 0.06 60);
+    color: oklch(0.40 0.14 60);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .badge-red {
+    background: oklch(0.92 0.08 25);
+    color: oklch(0.35 0.18 25);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .badge-blue {
+    background: oklch(0.92 0.06 230);
+    color: oklch(0.30 0.12 230);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .badge-navy {
+    background: oklch(0.90 0.03 254);
+    color: oklch(var(--gov-navy));
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .badge-gray {
+    background: oklch(0.90 0.01 240);
+    color: oklch(0.45 0.02 240);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  /* Score coloring */
+  .score-good { color: oklch(var(--gov-green)); font-weight: 600; }
+  .score-moderate { color: oklch(var(--gov-amber)); font-weight: 600; }
+  .score-poor { color: oklch(var(--gov-red)); font-weight: 600; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: oklch(var(--muted)); }
+  ::-webkit-scrollbar-thumb { background: oklch(var(--border)); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: oklch(var(--muted-foreground)); }
+}
+
+@layer utilities {
+  .text-gov-navy { color: oklch(var(--gov-navy)); }
+  .text-gov-gold { color: oklch(var(--gov-gold)); }
+  .text-gov-green { color: oklch(var(--gov-green)); }
+  .text-gov-amber { color: oklch(var(--gov-amber)); }
+  .text-gov-red { color: oklch(var(--gov-red)); }
+
+  .bg-gov-navy { background-color: oklch(var(--gov-navy)); }
+  .bg-gov-navy-dark { background-color: oklch(var(--gov-navy-dark)); }
+  .bg-gov-gold { background-color: oklch(var(--gov-gold)); }
+  .bg-gov-green-bg { background-color: oklch(var(--gov-green-bg)); }
+  .bg-gov-amber-bg { background-color: oklch(var(--gov-amber-bg)); }
+  .bg-gov-red-bg { background-color: oklch(var(--gov-red-bg)); }
+  .bg-gov-blue-bg { background-color: oklch(var(--gov-blue-bg)); }
+
+  .border-gov-navy { border-color: oklch(var(--gov-navy)); }
+  .border-gov-gold { border-color: oklch(var(--gov-gold)); }
+
+  .cell-good { background-color: oklch(var(--gov-green-bg)); color: oklch(0.35 0.15 145); font-weight: 600; }
+  .cell-moderate { background-color: oklch(var(--gov-amber-bg)); color: oklch(0.43 0.14 72); font-weight: 600; }
+  .cell-poor { background-color: oklch(var(--gov-red-bg)); color: oklch(0.42 0.20 25); font-weight: 600; }
+
+  .font-mono-data { font-family: 'Geist Mono', monospace; }
+}
