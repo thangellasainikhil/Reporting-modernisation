@@ -217,7 +217,7 @@ const RISK_DISTRIBUTION = [
   },
   {
     name: "High Risk (<3★)",
-    value: 284,
+    value: 184,
     pct: 10.4,
     fill: "oklch(0.52 0.22 25)",
   },
@@ -1854,7 +1854,7 @@ export default function PolicyAnalytics() {
         />
         <KPICard
           label="High-Risk Providers"
-          value="284"
+          value="184"
           sub="10.4% of total"
           icon={AlertTriangle}
           accent="oklch(var(--gov-red))"
@@ -1862,7 +1862,7 @@ export default function PolicyAnalytics() {
         />
         <KPICard
           label="Improving Providers"
-          value="621"
+          value="1366"
           sub="22.6% showing improvement"
           icon={Activity}
           accent="oklch(var(--gov-green))"
