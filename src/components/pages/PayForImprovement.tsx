@@ -50,7 +50,7 @@ const METRIC_BENCHMARKS: Record<
   "ED Reduction 90-Day": { benchmarkValue: 11.2, isLowerBetter: true },
   "Hospitalization Reduction": { benchmarkValue: 9.0, isLowerBetter: true },
   "Deprescribing Rate": { benchmarkValue: 20.0, isLowerBetter: false },
-  "Screening Completion": { benchmarkValue: 85.0, isLowerBetter: false },
+  "Screening Completion": { benchmarkValue: 55.0, isLowerBetter: false },
   "Social Participation": { benchmarkValue: 55.0, isLowerBetter: false },
 };
 
@@ -434,7 +434,7 @@ export default function PayForImprovement({
                   <th className="text-right">vs Benchmark %</th>
                   <th className="text-right">vs Baseline %</th>
                   <th className="text-right">Threshold</th>
-                  <th className="text-left">Overall Rating</th>
+                  
                   <th className="text-left">Funding Eligible</th>
                   <th className="text-right">Est. Funding</th>
                   <th className="text-center">Alert</th>
@@ -517,7 +517,7 @@ export default function PayForImprovement({
                       <td className="text-right text-muted-foreground">
                         {threshold?.threshold ?? "—"}%
                       </td>
-                      <td>
+                      {/* <td>
                         {overallStars !== null ? (
                           <StarRating
                             value={overallStars}
@@ -527,7 +527,7 @@ export default function PayForImprovement({
                         ) : (
                           <span className="text-muted-foreground">—</span>
                         )}
-                      </td>
+                      </td> */}
                       <td>
                         <IncentiveEligibilityBadge
                           eligible={dynamicEligible}
