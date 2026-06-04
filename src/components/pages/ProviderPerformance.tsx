@@ -399,7 +399,7 @@ export default function ProviderPerformance({
               <ScoreCard
                 label="Overall Score"
                 value={overallStars}
-                quintile={latestScorecard?.quintileRank}
+                // quintile={latestScorecard?.quintileRank}
                 scale="stars"
               />
               <ScoreCard
