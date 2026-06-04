@@ -163,7 +163,7 @@ export default function Sidebar({
           <div
             className="text-xs font-bold uppercase tracking-widest leading-none"
             style={{
-              color: "oklch(0.25 0.06 250)",
+              color: "oklch(0 0.06 250)",
               letterSpacing: "0.1em",
             }}
           >
@@ -173,7 +173,7 @@ export default function Sidebar({
           <div
             className="text-xs mt-0.5 leading-none"
             style={{
-              color: "oklch(0.42 0.02 250)",
+              color: "oklch(0 0.02 250)",
             }}
           >
             {currentRole} View
@@ -198,7 +198,7 @@ export default function Sidebar({
                   paddingBottom: "6px",
                   borderTop:
                     groupIdx > 0
-                      ? "1px solid oklch(0.75 0.02 250)"
+                      ? "1px solid oklch(0 0 250)"
                       : "none",
                   marginTop: groupIdx > 0 ? "4px" : "0",
                 }}
@@ -206,7 +206,7 @@ export default function Sidebar({
                 <span
                   className="text-xs font-bold uppercase"
                   style={{
-                    color: "oklch(0 0.04 250)",
+                    color: "oklch(0 0 250)",
                     letterSpacing: "0.10em",
                   }}
                 >
@@ -216,7 +216,7 @@ export default function Sidebar({
                 <div
                   className="flex-1 h-px"
                   style={{
-                    background: "oklch(0.75 0.01 250)",
+                    background: "oklch(0 0.01 250)",
                   }}
                   aria-hidden="true"
                 />
@@ -259,7 +259,7 @@ export default function Sidebar({
                       if (!isActive) {
                         e.currentTarget.style.background = "transparent";
                         e.currentTarget.style.color =
-                          "oklch(0.42 0.02 250)";
+                          "oklch(0 0 250)";
                       }
                     }}
                   >
