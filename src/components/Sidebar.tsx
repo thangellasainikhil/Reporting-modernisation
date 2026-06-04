@@ -140,35 +140,41 @@ export default function Sidebar({
       style={{
         width: "240px",
         minWidth: "240px",
-        background: "oklch(var(--sidebar))",
-        borderColor: "oklch(var(--sidebar-border))",
+        background: "oklch(0.90 0.015 250)",
+        borderColor: "oklch(0.78 0.01 250)",
       }}
       aria-label="Main navigation"
     >
-      {/* Top branding strip — echoes header, unifies dark shell */}
+      {/* Header */}
       <div
         className="px-4 py-3 border-b flex items-center gap-2.5 flex-shrink-0"
         style={{
-          borderBottomColor: "oklch(var(--sidebar-border))",
-          background: "oklch(0.11 0.055 254)",
+          borderBottomColor: "oklch(0.72 0.01 250)",
+          background: "oklch(0.82 0.02 250)",
         }}
       >
-        {/* Gold accent rule — matches header vertical rule motif */}
         <div
           className="w-0.5 h-5 flex-shrink-0 rounded-full"
           style={{ background: "oklch(var(--sidebar-primary))" }}
           aria-hidden="true"
         />
+
         <div>
           <div
             className="text-xs font-bold uppercase tracking-widest leading-none"
-            style={{ color: "oklch(0.72 0.03 240)", letterSpacing: "0.1em" }}
+            style={{
+              color: "oklch(0.25 0.06 250)",
+              letterSpacing: "0.1em",
+            }}
           >
             Module Navigator
           </div>
+
           <div
             className="text-xs mt-0.5 leading-none"
-            style={{ color: "oklch(0.40 0.025 240)" }}
+            style={{
+              color: "oklch(0.42 0.02 250)",
+            }}
           >
             {currentRole} View
           </div>
@@ -178,41 +184,44 @@ export default function Sidebar({
       <nav className="flex-1 py-1.5 overflow-y-auto">
         {NAV_GROUPS.map((group, groupIdx) => {
           const visibleItems = group.items.filter((item) =>
-            item.roles.includes(currentRole),
+            item.roles.includes(currentRole)
           );
+
           if (visibleItems.length === 0) return null;
 
           return (
             <div key={group.title}>
-              {/* Group header — improved contrast & separation */}
               <div
                 className="px-4 flex items-center gap-2"
                 style={{
                   paddingTop: groupIdx === 0 ? "10px" : "12px",
                   paddingBottom: "6px",
                   borderTop:
-                    groupIdx > 0 ? "1px solid oklch(0.20 0.055 254)" : "none",
+                    groupIdx > 0
+                      ? "1px solid oklch(0.75 0.02 250)"
+                      : "none",
                   marginTop: groupIdx > 0 ? "4px" : "0",
                 }}
               >
                 <span
                   className="text-xs font-bold uppercase"
                   style={{
-                    color: "oklch(0.52 0.065 254)",
+                    color: "oklch(0 0.04 250)",
                     letterSpacing: "0.10em",
                   }}
                 >
                   {group.title}
                 </span>
-                {/* Subtle rule after label */}
+
                 <div
                   className="flex-1 h-px"
-                  style={{ background: "oklch(0.20 0.055 254)" }}
+                  style={{
+                    background: "oklch(0.75 0.01 250)",
+                  }}
                   aria-hidden="true"
                 />
               </div>
 
-              {/* Nav items */}
               {visibleItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activePage === item.id;
@@ -226,34 +235,31 @@ export default function Sidebar({
                     data-ocid={item.ocid}
                     aria-label={label}
                     aria-current={isActive ? "page" : undefined}
-                    className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-left transition-colors duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gov-gold"
+                    className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-left transition-colors duration-100 focus-visible:outline-none"
                     style={{
                       background: isActive
-                        ? "oklch(0.24 0.095 254)"
+                        ? "oklch(0.88 0.04 250)"
                         : "transparent",
                       color: isActive
-                        ? "oklch(0.96 0.01 240)"
-                        : "oklch(0.60 0.03 240)",
+                        ? "oklch(0.20 0.02 250)"
+                        : "oklch(0.42 0.02 250)",
                       borderLeft: isActive
                         ? "3px solid oklch(var(--sidebar-primary))"
                         : "3px solid transparent",
                     }}
                     onMouseEnter={(e) => {
                       if (!isActive) {
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.background = "oklch(0.18 0.07 254)";
-                        (e.currentTarget as HTMLButtonElement).style.color =
-                          "oklch(0.84 0.015 240)";
+                        e.currentTarget.style.background =
+                          "oklch(0.93 0.02 250)";
+                        e.currentTarget.style.color =
+                          "oklch(0.25 0.02 250)";
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
-                        (
-                          e.currentTarget as HTMLButtonElement
-                        ).style.background = "transparent";
-                        (e.currentTarget as HTMLButtonElement).style.color =
-                          "oklch(0.60 0.03 240)";
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.color =
+                          "oklch(0.42 0.02 250)";
                       }
                     }}
                   >
@@ -263,9 +269,10 @@ export default function Sidebar({
                         color: isActive
                           ? "oklch(var(--sidebar-primary))"
                           : "inherit",
-                        opacity: isActive ? 1 : 0.7,
+                        opacity: isActive ? 1 : 0.8,
                       }}
                     />
+
                     <span className="text-xs font-medium leading-snug">
                       {label}
                     </span>
@@ -281,14 +288,18 @@ export default function Sidebar({
       <div
         className="px-4 py-2.5 border-t text-xs flex-shrink-0"
         style={{
-          borderColor: "oklch(0.20 0.055 254)",
-          background: "oklch(0.11 0.055 254)",
+          borderColor: "oklch(0.55 0.01 250)",
+          background: "oklch(0.94 0.01 250)",
         }}
       >
-        <div style={{ color: "oklch(0.50 0.035 240)" }}>
+        <div style={{ color: "oklch(0.45 0.02 250)" }}>
           Version 20.0 · Q4-2025
         </div>
-        <div className="mt-0.5" style={{ color: "oklch(0.38 0.025 240)" }}>
+
+        <div
+          className="mt-0.5"
+          style={{ color: "oklch(0.55 0.02 250)" }}
+        >
           Privacy Act 1988 Compliance
         </div>
       </div>
