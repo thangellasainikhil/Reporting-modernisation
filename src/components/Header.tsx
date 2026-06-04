@@ -74,7 +74,7 @@ export default function Header({
           </div>
           <div
             className="text-xs leading-snug mt-0.5"
-            style={{ color: "oklch(0.58 0.035 240)", fontWeight: 400 }}
+            style={{ color: "oklch(1 0.035 240)", fontWeight: 400 }}
           >
             National Aged Care Reporting & Prevention Framework
           </div>
@@ -87,13 +87,13 @@ export default function Header({
         >
           <div
             className="text-xs font-semibold"
-            style={{ color: "oklch(0.58 0.04 240)" }}
+            style={{ color: "oklch(1 0.035 240)" }}
           >
             Australian Government
           </div>
           <div
             className="text-xs mt-0.5"
-            style={{ color: "oklch(0.44 0.03 240)" }}
+            style={{ color: "oklch(1 0.035 240)" }}
           >
             Department of Health & Aged Care
           </div>
@@ -106,7 +106,7 @@ export default function Header({
         <div className="flex items-center gap-1.5">
           <span
             className="text-xs font-medium hidden sm:block"
-            style={{ color: "oklch(0.48 0.03 240)" }}
+            style={{ color: "oklch(1 0.035 240)" }}
           >
             Period
           </span>
@@ -136,7 +136,7 @@ export default function Header({
         <div className="flex items-center gap-1.5">
           <span
             className="text-xs font-medium hidden sm:block"
-            style={{ color: "oklch(0.48 0.03 240)" }}
+            style={{ color: "oklch(1 0.035 240)" }}
           >
             Role
           </span>
