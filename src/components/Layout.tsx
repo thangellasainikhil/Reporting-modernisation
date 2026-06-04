@@ -99,7 +99,7 @@ export default function Layout({
           {renderPage()}
         </main>
       </div>
-      <footer
+      {/* <footer
         className="bg-gov-navy-dark text-center py-2 text-xs flex-shrink-0"
         style={{ color: "oklch(0.48 0.02 240)" }}
       >
@@ -113,7 +113,7 @@ export default function Layout({
         >
           caffeine.ai
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
